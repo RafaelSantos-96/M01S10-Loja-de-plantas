@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PlantCard from "../molecules/PlantCard";
-import styles from "./Home.module.css"; // opcional para estilizar a grid
+import styles from "./Home.module.css";
+import PlantGrid from "../organisms/PlantGrid";
 
 const Home = () => {
   const [plants, setPlants] = useState([
@@ -25,14 +26,10 @@ const Home = () => {
   ]);
 
   return (
-    <div>
-      <h2>Bem-vindo à nossa loja de plantas 🌿</h2>
-      <div className={styles.grid}>
-        {plants.map((plant) => (
-          <PlantCard key={plant.id} plant={plant} />
-        ))}
-      </div>
-    </div>
+   <div style={{ padding: "16px" }}>
+  <h2>Bem-vindo à nossa loja de plantas 🌿</h2>
+  <PlantGrid plants={plants} />
+</div>
   );
 };
 
