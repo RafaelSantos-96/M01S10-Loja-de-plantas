@@ -1,27 +1,43 @@
-import Button from "../atoms/Button";
-import PriceTag from "../atoms/PriceTag";
-import PlantIcon from "../atoms/PlantIcon";
+import React, { useState } from "react";
+import PlantCard from "../molecules/PlantCard";
+import styles from "./Home.module.css"; // opcional para estilizar a grid
 
-export default function Home() {
+const Home = () => {
+  const [plants, setPlants] = useState([
+    {
+      id: "1",
+      name: "Samambaia",
+      price: 29.9,
+      light: "shade",
+    },
+    {
+      id: "2",
+      name: "Espada de São Jorge",
+      price: 39.9,
+      light: "sun",
+    },
+    {
+      id: "3",
+      name: "Zamioculca",
+      price: 49.9,
+      light: "shade",
+    },
+  ]);
+
   return (
-    <div style={{ padding: "2rem" }}>
+    <div>
       <h2>Bem-vindo à nossa loja de plantas 🌿</h2>
-
-      <Button variant="primary">Comprar</Button>
-      <Button variant="secondary" style={{ marginLeft: "1rem" }}>Ver mais</Button>
-
-      <div style={{ marginTop: "1rem" }}>
-        <PriceTag value={25.9} />
-      </div>
-
-      <div style={{ marginTop: "1rem" }}>
-        <PlantIcon size="sm" />
-        <PlantIcon size="md" />
-        <PlantIcon size="lg" />
+      <div className={styles.grid}>
+        {plants.map((plant) => (
+          <PlantCard key={plant.id} plant={plant} />
+        ))}
       </div>
     </div>
   );
-}
+};
+
+export default Home;
+
 
 
 
