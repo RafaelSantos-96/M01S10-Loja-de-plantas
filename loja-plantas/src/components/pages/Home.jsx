@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import PlantCard from "../molecules/PlantCard";
-import styles from "./Home.module.css";
 import PlantGrid from "../organisms/PlantGrid";
+import { Paper } from "@mui/material";
 
 const Home = () => {
-  const [plants, setPlants] = useState([
+  const [plants] = useState([
     {
       id: "1",
       name: "Samambaia",
@@ -26,14 +25,16 @@ const Home = () => {
   ]);
 
   return (
-   <div style={{ padding: "16px" }}>
-  <h2>Bem-vindo à nossa loja de plantas 🌿</h2>
-  <PlantGrid plants={plants} />
-</div>
+    <Paper elevation={3} style={{ padding: "16px" }}>
+      <h2>Bem-vindo à nossa loja de plantas 🌿</h2>
+      <PlantGrid plants={plants} />
+    </Paper>
   );
 };
 
 export default Home;
+
+
 
 
 
