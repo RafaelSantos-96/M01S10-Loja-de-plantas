@@ -2,11 +2,18 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 16px;
-  max-width: 200px;
+  width: 200px;
   text-align: center;
-  background-color: #f8fdf8;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  /* Adicionados para igualar altura e alinhar conteúdo */
+  height: 200px; /* Ajuste conforme necessário */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
+
 
 .header {
   display: flex;
@@ -14,3 +21,6 @@
   align-items: center;
   margin-bottom: 8px;
 }
+
+
+

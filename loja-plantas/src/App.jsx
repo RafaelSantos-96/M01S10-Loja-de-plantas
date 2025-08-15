@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ThemeProvider, CssBaseline, Button, Box } from "@mui/material";
 import { lightTheme, darkTheme } from "./themes";
-import Home from "./components/pages/Home";
+import PlantStore from "./components/pages/PlantStore";
 
 const App = () => {
   const [isDark, setIsDark] = useState(false);
@@ -17,7 +17,7 @@ const App = () => {
         >
           Alternar tema
         </Button>
-        <Home />
+        <PlantStore />
       </Box>
     </ThemeProvider>
   );
