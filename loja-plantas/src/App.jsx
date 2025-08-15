@@ -7,22 +7,22 @@ const App = () => {
   const [isDark, setIsDark] = useState(false);
 
   return (
-    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-      <CssBaseline />
-      <Box sx={{ padding: 2 }}>
+  <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+    <CssBaseline />
+    <Box sx={{ padding: 2 }}>
+      <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 2 }}>
         <Button
           variant="contained"
           onClick={() => setIsDark(!isDark)}
-          sx={{ mb: 2 }}
         >
           Alternar tema
         </Button>
-        <PlantStore />
       </Box>
-    </ThemeProvider>
-  );
+
+      <PlantStore />
+    </Box>
+  </ThemeProvider>
+);
 };
-
 export default App;
-
 
